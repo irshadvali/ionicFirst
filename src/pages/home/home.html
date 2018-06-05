@@ -7,6 +7,26 @@
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
   <h2>Home</h2>
-  {{ data }}
-  <div style="height: 50px; width: 100%; background: #d00000"></div>
+  <p></p>
+  <!-- <div style="height: 50px; width: 100%; background:{{ data }}"></div> -->
+  
+   <!-- 1. List using div tag. -->
+  <div class="itemStyle" *ngFor="let item of data" 
+  [ngStyle]="{'background-color': item.colorname }">
+    {{ item.colorname | uppercase }} 
+  </div>
+
+  <!-- List using table tag -->
+  <!-- <table>
+    <tr>
+    <th> Color Name </th>
+    </tr>
+    <tr *ngFor="let item of data">
+      <td>  {{ item.colorname }} </td>
+    </tr>
+  </table> -->
+
+  <!-- List using ul tag -->
+  <!-- <ul> <li *ngFor="let item of data"> {{ item.colorname }} </li></ul> -->
+
 </ion-content>

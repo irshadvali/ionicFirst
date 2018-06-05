@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {Http,Headers} from '@angular/http'
+import {Http} from '@angular/http'
 import 'rxjs/add/operator/map'
 @Component({
   selector: 'page-home',
@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map'
 })
 export class HomePage implements OnInit {
 url:string;
-data:string;
+data: any = [];
   constructor(public http:Http,public navCtrl: NavController) {
 
   }
@@ -21,11 +21,12 @@ data:string;
     this.loadUser();
   }
   loadUser(){
-    this.http.get('https://api.randomuser.me/')
+    this.http.get('https://api.myjson.com/bins/dihv7')
     .map(res => res.json())
     .subscribe(data=>{
-      this.data=data.results;
-      console.log(data.results);
+     // this.data=data.colorlist[0].colorname;
+     this.data=data.colorlist;
+      console.log(data.colorlist);
     },err=>{
       console.log(err);
     })
