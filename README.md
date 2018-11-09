@@ -26,7 +26,14 @@ check homebrew is install :  run $ brew   in terminal
           cd myApp 
           ionic serve   (local machine)
           
+          /* For android phone */
+          ionic cordova platform add android
+          
           ionic cordova run android  (android device)
+          
+             /* For ios mobile */
+             
+          ionic cordova platform add ios
           ionic cordova run ios  (ios device)
 
 
